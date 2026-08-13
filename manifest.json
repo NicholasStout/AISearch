@@ -1,0 +1,17 @@
+{
+  "domain": "searxng",
+  "name": "searxng",
+  "codeowners": [
+    "@NicholasStout"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/searxng",
+  "homekit": {},
+  "integration_type": "service",
+  "iot_class": "assumed_state",
+  "quality_scale": "bronze",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": []
+}
