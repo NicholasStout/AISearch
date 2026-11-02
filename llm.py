@@ -13,7 +13,7 @@ class SearXNGSearchTool(llm.Tool):
     name = "searxng_search"
 
     description = (
-        "Use this as an oracle for general information and unit conversions"
+        "Use this as a search engine for general information and unit conversions."
     )
 
     parameters = {
@@ -21,7 +21,7 @@ class SearXNGSearchTool(llm.Tool):
         "properties": {
             "query": {
                 "type": "string",
-                "description": "The search query to send to SearXNG.",
+                "description": "The query to send to the search engine.",
             },
         },
         "required": ["query"],
@@ -50,9 +50,9 @@ class SearXNGSearchTool(llm.Tool):
         return await api.search(query)
 
 
-@llm.hass_config_entry
+#@llm.hass_config_entry
 @callback
-def async_get_tools(
+async def async_get_tools(
     hass: HomeAssistant,
     llm_context: LLMContext,
     api_id: str,
@@ -62,6 +62,6 @@ def async_get_tools(
     return llm.LLMTools(
         tools=[SearXNGSearchTool()],
         prompt=(
-            "Use searxng_search as an oracle for general information and unit conversions"
+            "Use SearXNGSearchTool to submit a concise search engine query for general information and unit conversions."
         ),
     )
